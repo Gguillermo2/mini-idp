@@ -28,7 +28,7 @@ public class DocumentService {
 
         String classification = classifyDocument(request.getRawContent());
 
-        // Preparado para futura IA
+        // Preparado para IA 
         String aiSummary = geminiClient.summarizeDocument(request.getRawContent());
 
         Document document = new Document();

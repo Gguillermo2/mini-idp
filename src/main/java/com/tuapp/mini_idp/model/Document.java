@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @ToString
 public class Document {
 
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

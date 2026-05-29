@@ -67,7 +67,7 @@ public class GeminiClient {
                     Map.class
             );
 
-            // Navegamos la respuesta JSON de Gemini:
+            // Navegacion hacia  la respuesta JSON de Gemini:
             // response -> candidates[0] -> content -> parts[0] -> text
             List candidates = (List) response.getBody().get("candidates");
             Map firstCandidate = (Map) candidates.get(0);

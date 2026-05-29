@@ -3,19 +3,18 @@ pipeline {
 
     tools {
         maven 'Maven'
+        jdk 'Java21'
+    }
+
+    environment {
+        GEMINI_API_KEY = credentials('gemini-api-key')
     }
 
     stages {
 
-        stage('Build') {
+        stage('Build & Test') {
             steps {
-                sh 'mvn clean package'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
+                sh 'mvn clean verify'
             }
         }
 
@@ -26,4 +25,14 @@ pipeline {
         }
     }
 
+    post {
+        success {
+            echo 'Pipeline ejecutado correctamente.'
+        }
+
+        failure {
+            echo 'El pipeline falló.'
+        }
+    }
 }
+
