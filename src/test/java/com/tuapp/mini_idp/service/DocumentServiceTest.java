@@ -30,7 +30,7 @@ class DocumentServiceTest {
     void setUp() {
         // Gemini siempre devuelve un resumen simulado
         // para que los tests no dependan de la red
-        when(geminiClient.summarizeDocument(anyString()))
+        when(geminiClient.summarizeDocument(any()))
                 .thenReturn("Resumen simulado para tests.");
 
         // El repositorio devuelve el mismo documento que recibe
